@@ -1,0 +1,24 @@
+{
+  "name": "eventforge",
+  "version": "1.0.0",
+  "description": "EventForge - Intelligent Event Operations Platform",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=apps/api\" \"npm run dev --workspace=apps/web\"",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "seed": "npm run seed --workspace=apps/api",
+    "db:seed": "npm run seed --workspace=apps/api",
+    "build": "npm run build --workspace=apps/web",
+    "start:api": "npm run start --workspace=apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "mongodb": "^7.6.0"
+  }
+}
